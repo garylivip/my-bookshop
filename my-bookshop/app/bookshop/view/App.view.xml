@@ -1,0 +1,11 @@
+<mvc:View
+    controllerName="garyli.bookshop.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">    
+    <Shell>
+		<App id="app"/>        
+
+ 
+	</Shell>
+</mvc:View>
+

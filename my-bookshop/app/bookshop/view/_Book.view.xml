@@ -1,0 +1,17 @@
+<mvc:View
+    controllerName="garyli.bookshop.controller.Book"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <Text text="Book detail:"/>  
+    <!-- <Text text="{DB1>/firstName}"/>  
+    <Text text="{DB2>/firstName}"/>  
+    <Text text="{DB2>/lastName}"/>  
+    <Text text="{productCatalog>/Books(102)/ID}"/>
+    <Text text="{productCatalog>/Books(102)/title}"/> -->
+    <Text text="{productCatalog>ID}"/>
+    <Text text="{productCatalog>title}"/>
+    <Text text="{booksXXX>ID}"/>
+    
+
+</mvc:View>

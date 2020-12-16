@@ -7,6 +7,7 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^4",
+    "@sap/hana-client": "^2.6.64",
     "express": "^4"
   },
   "devDependencies": {
@@ -18,10 +19,11 @@
   "cds": {
     "requires": {
       "db": {
-        "kind": "sqlite",
-        "credentials": {
-          "database": "db/my-bookshop.db"
-        }
+        "model": [
+          "db",
+          "srv"
+        ],
+        "kind": "sql"
       }
     }
   }

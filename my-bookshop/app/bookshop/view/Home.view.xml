@@ -1,0 +1,70 @@
+<mvc:View    
+    controllerName="garyli.bookshop.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">  
+    <!-- <Page title="Books Category" class="sapUiResponsiveContentPadding"> -->
+        <!-- <Text text="productCatalog>/Books(201)"/>
+        <Text text="{productCatalog>/Books(201)/ID}"/>
+        <Text text="{productCatalog>/Books(201)/author/ID}"/> -->
+        <!-- <content>  -->
+            <Table id="employeeTable" 
+                items="{
+                    path:'productCatalog>/Books',
+                    parameters:{
+                        $count:true,
+                        $$updateGroupId:'peopleGroup'
+                    }
+                    }" >
+                <headerToolbar>
+                <OverflowToolbar>
+                    <content>
+                    <Button id="addButton"
+                    icon="sap-icon://add"
+                    press=".onAdd"
+                    >
+                    </Button>
+                    <Button id="saveButton"
+                    icon="sap-icon://save"
+                    press=".onSave"
+                    >
+                    </Button>                    
+                    </content>
+                </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column><Text text="ID"/>            </Column>
+                    <Column><Text text="Title"/>         </Column>
+                    <!-- <Column><Text text="Description"/>   </Column> -->
+                    <Column><Text text="Author Name"/>   </Column>
+                    <Column><Text text="Stock"/>   </Column>
+                    <!-- <Column><Text text="Static Column"/> </Column> -->
+                </columns>            
+                <items>
+                    <ColumnListItem type="Navigation" press=".onListItemPressed">
+                        <cells>
+                            <Text sId="testid" text="{productCatalog>ID}"/>            
+                            <Text text="{productCatalog>title}"/>      
+                            <!-- <Text text="{productCatalog>description}"/>                   -->
+                            <!-- <Text text="{/productCatalog>name}"/>            -->
+                            <Text text="{productCatalog>author/name}"/>                                       
+                            <Text text="{productCatalog>stock}"/>
+                            <!-- <Input value="{productCatalog>stock}"/> -->
+                            <!-- <Input value="{/recipient/name}"/> -->
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            
+            </Table>   
+			<!-- <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{productCatalog>/Books}">
+				<items>
+					<StandardListItem
+						title="{productCatalog>ID} {productCatalog>author/name}"
+						iconDensityAware="false"
+						iconInset="false"
+						type="Navigation"
+						press=".onListItemPressed"/>
+				</items>
+			</List>                      -->
+        <!-- </content>
+    </Page> -->
+</mvc:View>

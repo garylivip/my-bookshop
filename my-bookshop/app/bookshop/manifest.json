@@ -1,0 +1,104 @@
+{
+"_version": "1.12.0",
+"sap.app":{
+    "dataSources": {
+        "invoices": {            
+            "uri": "/invoices/",              
+            "type": "OData",
+            "settings": {
+              "odataVersion": "4.0"
+            }
+        },
+        "productCatalog":{
+            "uri":"/catalog/",
+            "type":"OData",
+            "settings":{
+                "odataVersion":"4.0"
+            }
+        },
+        "booksXXX":{
+            "uri":"/catalog/",
+            "type":"OData",
+            "settings":{
+                "odataVersion":"4.0"
+            }
+        }        
+      }
+},
+"sap.ui":{},
+"sap.ui5":{
+    "rootView":{
+        "viewName": "garyli.bookshop.view.App",
+        "type":"XML",
+        "async":true,
+        "id":"app"
+    },
+    "routing":{
+        "config":{
+            "routerClass":"sap.m.routing.Router",
+            "viewType":"XML",
+            "viewPath":"garyli.bookshop.view",
+            "controlId":"app",
+            "controlAggregation":"pages",
+            "transition":"slide",
+            "async":true
+        },
+        "routes":[{
+            "pattern":"",
+            "name":"appHome",
+            "target":"home"
+        },{
+            "pattern":"book/{bookId}",
+            "name":"book",
+            "target":"book"
+        }],
+        "targets":{
+            "home":{
+                "viewId":"home",
+                "viewName":"Home",
+                "viewLevel":1
+            },
+            "book":{
+                "viewId":"book",
+                "viewName":"Book",
+                "viewLevel":2
+            },
+            "notFound":{
+                "viewId":"notFound",
+                "viewName":"NotFound",
+                "transition":"show"
+            }
+        }
+    },
+    "models":{
+        "invoice": {
+            "dataSource": "invoices",
+            "settings": {
+                "synchronizationMode": "None",
+                "operationMode": "Server",
+                "autoExpandSelect": true,
+                "earlyRequests": true
+            }                
+        },
+        "productCatalog":{
+            "dataSource": "productCatalog",
+            "settings":{
+                "synchronizationMode": "None",
+                "operationMode": "Server",
+                "autoExpandSelect": true,
+                "earlyRequests": true                
+            }
+        },        
+        "":{
+            "dataSource": "productCatalog",
+            "settings":{
+                "synchronizationMode": "None",
+                "operationMode": "Server",
+                "autoExpandSelect": true,
+                "earlyRequests": true                
+            }
+        }
+    }
+}
+
+}
